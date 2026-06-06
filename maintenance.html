@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kobra S1 Complete Maintenance Guide · Anycubic</title>
+<style>
+  :root {
+    --accent: #3a6093;
+    --bg: #f7f9fc;
+    --card: #fff;
+    --border: #dce3ed;
+    --text: #1a1f2b;
+    --muted: #5f6b7a;
+    --warn: #e67e22;
+    --danger: #c0392b;
+    --ok: #27ae60;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 0 1rem 3rem;
+  }
+  .max { max-width: 880px; margin: 0 auto; }
+
+  header {
+    background: var(--accent);
+    color: #fff;
+    padding: 2rem 1.5rem 1.5rem;
+    border-radius: 0 0 1rem 1rem;
+    text-align: center;
+    margin: 0 -1rem 2rem;
+  }
+  header h1 { font-size: 1.7rem; font-weight: 700; margin-bottom: .3rem; }
+  header p { font-size: .95rem; opacity: .85; }
+
+  section { margin-bottom: 2rem; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: .75rem;
+    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+  }
+  .card h2 {
+    font-size: 1.2rem;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: .75rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .card h2 .badge {
+    font-size: .68rem;
+    font-weight: 600;
+    background: var(--accent);
+    color: #fff;
+    padding: .15rem .55rem;
+    border-radius: 20px;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .card h3 {
+    font-size: 1rem;
+    margin: 1rem 0 .35rem;
+    color: #1a1f2b;
+  }
+  .card h3:first-of-type { margin-top: 0; }
+  .card ul, .card ol { padding-left: 1.4rem; margin: .4rem 0 .6rem; }
+  .card li { margin-bottom: .3rem; }
+  .card p { margin: .35rem 0; }
+
+  .alert {
+    border-radius: .5rem;
+    padding: .7rem 1rem;
+    margin: .6rem 0;
+    font-size: .92rem;
+  }
+  .alert-warn  { background: #fef6e4; border-left: 4px solid var(--warn); color: #7a4f0e; }
+  .alert-danger{ background: #fce8e6; border-left: 4px solid var(--danger); color: #8b2a1e; }
+  .alert-info  { background: #e8f0fa; border-left: 4px solid var(--accent); color: #1f3a5f; }
+  .alert-ok    { background: #e6f7ee; border-left: 4px solid var(--ok); color: #166534; }
+
+  .schedule {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .92rem;
+    margin: .75rem 0;
+  }
+  .schedule th, .schedule td {
+    text-align: left;
+    padding: .45rem .6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .schedule th { background: var(--accent); color: #fff; font-weight: 600; }
+  .schedule tr:nth-child(even) td { background: #f2f5fa; }
+
+  .checklist { list-style: none; padding: 0; }
+  .checklist li {
+    padding: .35rem 0 .35rem 1.6rem;
+    position: relative;
+  }
+  .checklist li::before {
+    content: "\2610";
+    position: absolute;
+    left: 0;
+    font-size: 1.1rem;
+  }
+  .checklist li.done::before { content: "\2705"; }
+
+  .step-num {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: .8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: .4rem;
+    flex-shrink: 0;
+  }
+  .card ol li { display: flex; align-items: flex-start; gap: .3rem; }
+  .card ol li::marker { content: ""; }
+
+  .parts-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .9rem;
+    margin: .6rem 0;
+  }
+  .parts-table th, .parts-table td {
+    text-align: left;
+    padding: .5rem .6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .parts-table th { background: #e8f0fa; color: var(--accent); font-weight: 600; }
+  .parts-table a { color: var(--accent); word-break: break-all; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+    font-size: .88rem;
+    color: var(--muted);
+    text-align: center;
+  }
+  footer a { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.3rem; }
+    .card { padding: 1rem; }
+    .parts-table td, .parts-table th { font-size: .82rem; }
+  }
+</style>
+</head>
+<body>
+<div class="max">
+
+<header>
+  <h1>🧰 Anycubic Kobra S1 — Complete Maintenance Guide</h1>
+  <p>Keep your printer running smooth · Step-by-step · Checklists · Parts &amp; spares</p>
+</header>
+
+<!-- ═══ SCHEDULE ═══ -->
+<section>
+  <div class="card">
+    <h2>📅 Quick-Reference Schedule</h2>
+    <table class="schedule">
+      <tr><th>Interval</th><th>Task</th><th>See §</th></tr>
+      <tr><td><strong>Every print</strong></td><td>Wipe spring steel sheet; check first layer</td><td>9</td></tr>
+      <tr><td><strong>Weekly</strong></td><td>Inspect fans for dust; check camera lens</td><td>8, 4</td></tr>
+      <tr><td><strong>Monthly</strong></td><td>Clean &amp; inspect Y-axis linear rods</td><td>2</td></tr>
+      <tr><td><strong>Every 3 months</strong></td><td>Lubricate Z-axis lead screw</td><td>1</td></tr>
+      <tr><td><strong>Every 3–5 spools</strong></td><td>Inspect cutter assembly for wear</td><td>5</td></tr>
+      <tr><td><strong>As needed</strong></td><td>Nozzle cleaning / cold pull; replace silicone sock</td><td>6, 7</td></tr>
+    </table>
+    <p class="alert alert-info">🔗 Original source: <a href="https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-combo/maintenance-recommendations" target="_blank">Anycubic Wiki — Kobra S1 Maintenance Recommendations</a></p>
+  </div>
+</section>
+
+<!-- ═══ SAFETY ═══ -->
+<section>
+  <div class="card">
+    <h2>⚠️ Safety First</h2>
+    <ul>
+      <li><strong>Always power off and disconnect</strong> the printer before cleaning or touching moving parts. (Z-screw lubrication is the one exception — the motor needs to be on to move axes.)</li>
+      <li>Let the hotend cool below 40 °C before handling the nozzle or silicone sock.</li>
+      <li>Use insulated gloves when cleaning a heated nozzle.</li>
+      <li>Work in a well-ventilated area if using isopropyl alcohol or compressed air.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ VIDEO ═══ -->
+<section>
+  <div class="card" style="text-align:center;">
+    <h2>▶️ Extruder Disassembly Video</h2>
+    <p>Step-by-step walkthrough for taking apart the Kobra S1 extruder — useful when clearing jams or replacing parts.</p>
+    <div style="margin-top:.75rem;">
+      <a href="https://www.youtube.com/watch?v=EUBRvJcQh-I" target="_blank" rel="noopener" style="display:inline-block;max-width:100%;border-radius:.5rem;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12);">
+        <img src="https://i.ytimg.com/vi/EUBRvJcQh-I/hqdefault.jpg" alt="Anycubic Kobra S1 How To Disassemble Extruder" style="display:block;width:100%;max-width:480px;height:auto;">
+      </a>
+      <p style="margin-top:.5rem;font-size:.9rem;"><a href="https://www.youtube.com/watch?v=EUBRvJcQh-I" target="_blank" rel="noopener">Watch on YouTube →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 1. Z-AXIS LEAD SCREW ═══ -->
+<section>
+  <div class="card">
+    <h2>1. Z-Axis Lead Screw <span class="badge">Every 3 months</span></h2>
+
+    <p><strong>Symptoms it needs attention:</strong> Grinding, clicking, or uneven noise when the Z-axis moves. (Tip: printing above 350 mm/s produces normal metal friction sounds — don't confuse the two.)</p>
+
+    <h3>🛠 Step-by-Step</h3>
+    <ol>
+      <li><span class="step-num">1</span> <strong>Clean the screw.</strong> With printer off, wipe the lead screw with a lint-free cloth to remove dust and old grease. A soft brush helps reach the threads.</li>
+      <li><span class="step-num">2</span> <strong>Zero the Z axis.</strong> Power on → <em>Tools → Move → All Zero</em> (or <em>Z Zero</em>). The bed rises to the top.</li>
+      <li><span class="step-num">3</span> <strong>Apply grease.</strong> Dab a <strong>pea-sized</strong> amount of PTFE-based grease (e.g. Super Lube 21030) onto a clean cloth. Run it along the exposed screw threads. Avoid lithium grease — it runs off.</li>
+      <li><span class="step-num">4</span> <strong>Spread evenly.</strong> Press <em>Z+</em> to lower the bed to the bottom, then apply grease to the remaining threads. Hit <em>Z Zero</em> to raise again — the nut spreads the grease naturally.</li>
+      <li><span class="step-num">5</span> <strong>Test.</strong> Run a short print or move the Z-axis through its full range. Listen for smooth, quiet travel.</li>
+    </ol>
+
+    <div class="alert alert-warn">
+      <strong>⚠️ Do not use liquid oil.</strong> It drips off the screw and misses the nut, making the problem worse.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 2. Y-AXIS LINEAR RODS ═══ -->
+<section>
+  <div class="card">
+    <h2>2. Y-Axis Linear Rods <span class="badge">Monthly</span></h2>
+    <p>The Y-axis glides on steel linear rods through linear bearings. Dust or filament fragments can cause binding and layer inconsistencies.</p>
+
+    <h3>🛠 Step-by-Step</h3>
+    <ol>
+      <li><span class="step-num">1</span> <strong>Power off &amp; unplug.</strong></li>
+      <li><span class="step-num">2</span> <strong>Inspect.</strong> Gently slide the bed by hand. Feel for roughness, catches, or visible debris on the rods. Use a lint-free cloth or soft brush to wipe away dust.</li>
+      <li><span class="step-num">3</span> <strong>Blow clean.</strong> If debris is stubborn, use an air gun, blower, or compressed air can — <strong>short, gentle bursts</strong> to avoid blowing dust into electronics.</li>
+      <li><span class="step-num">4</span> <strong>Lubricate.</strong> Apply a <strong>thin, even coat</strong> of PTFE grease along the rod surface. Slide the bed back and forth by hand to work it in.</li>
+      <li><span class="step-num">5</span> <strong>Test.</strong> Reconnect power, home the Y-axis, and run a small print. Listen for smooth, quiet operation.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ 3. X-AXIS RODS ═══ -->
+<section>
+  <div class="card">
+    <h2>3. X-Axis Rods <span class="badge">As needed</span></h2>
+    <p>The X-axis uses <strong>graphene-bearing sleeves</strong> — they are self-lubricating.</p>
+
+    <div class="alert alert-danger"><strong>🚫 NEVER apply grease to the X-axis rods.</strong> Graphene sleeves already provide lubrication; adding grease attracts dust and causes premature wear.</div>
+
+    <h3>🛠 Cleaning</h3>
+    <ol>
+      <li><span class="step-num">1</span> Power off and unplug.</li>
+      <li><span class="step-num">2</span> Dampen a lint-free cloth with <strong>isopropyl alcohol</strong> (≥90 %).</li>
+      <li><span class="step-num">3</span> Wipe the rod thoroughly to remove dust, filament dust, and old residue.</li>
+      <li><span class="step-num">4</span> Let the alcohol evaporate completely before powering on.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ 4. CAMERA ═══ -->
+<section>
+  <div class="card">
+    <h2>4. Camera <span class="badge">As needed / weekly check</span></h2>
+    <p>Blurry or hazy time-lapse / monitoring footage usually means a dirty lens.</p>
+    <ol>
+      <li><span class="step-num">1</span> Use a <strong>lint-free microfiber cloth</strong> or a cotton swab.</li>
+      <li><span class="step-num">2</span> Lightly moisten with isopropyl alcohol.</li>
+      <li><span class="step-num">3</span> Gently wipe the lens in a circular motion. Avoid pressing hard.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ 5. CUTTER ASSEMBLY ═══ -->
+<section>
+  <div class="card">
+    <h2>5. Cutter (Filament Cutter) <span class="badge">Every 3–5 spools</span></h2>
+    <p>The ACE Pro / filament cutter can dull over time, leading to ragged cuts or failed retractions.</p>
+    <ol>
+      <li><span class="step-num">1</span> Power off.</li>
+      <li><span class="step-num">2</span> Use an <strong>S2.0 hex (Allen) key</strong> to remove the cutter assembly.</li>
+      <li><span class="step-num">3</span> Inspect the blade edge. If it's chipped, rounded, or visibly worn, replace it.</li>
+      <li><span class="step-num">4</span> Reassemble and test with a filament load/unload cycle.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ 6. HOTEND & NOZZLE ═══ -->
+<section>
+  <div class="card">
+    <h2>6. Hotend &amp; Nozzle <span class="badge">As needed</span></h2>
+    <p><strong>Signs of trouble:</strong> under-extrusion, stringing, blobs, clicking extruder, or poor surface finish.</p>
+
+    <h3>🛠 Basic Cleaning (surface gunk)</h3>
+    <ol>
+      <li><span class="step-num">1</span> Remove the silicone sock (carefully — it's brittle when cold).</li>
+      <li><span class="step-num">2</span> Heat nozzle to <strong>200 °C</strong>.</li>
+      <li><span class="step-num">3</span> Wearing insulated gloves, use a paper towel or tweezers to wipe the outside of the nozzle clean.</li>
+    </ol>
+
+    <h3>🛠 Deep Clean — Cold Pull (recommended for clogs)</h3>
+    <ol>
+      <li><span class="step-num">1</span> Heat hotend to printing temperature for your current filament. Purge a small amount.</li>
+      <li><span class="step-num">2</span> Let it cool to <strong>~90–100 °C</strong> (just above the glass-transition temp of PLA).</li>
+      <li><span class="step-num">3</span> Manually push filament through until it exits the nozzle, then firmly <strong>pull it out</strong> — the tip should come out as a clean plug with debris inside.</li>
+      <li><span class="step-num">4</span> Repeat until the plug comes out clean. Use <strong>nylon cleaning filament</strong> for stubborn clogs (follow the same method).</li>
+    </ol>
+
+    <h3>🛠 Clogged Nozzle — Needle Clear</h3>
+    <ol>
+      <li><span class="step-num">1</span> Heat nozzle to <strong>230 °C</strong>.</li>
+      <li><span class="step-num">2</span> Carefully insert the provided steel needle (or 0.35 mm nozzle-clearing pin) up into the nozzle orifice.</li>
+      <li><span class="step-num">3</span> Purge filament to push out the dislodged debris.</li>
+    </ol>
+
+    <div class="alert alert-warn">
+      ⏱ Let the hotend cool down before putting the silicone sock back on.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. SILICONE SOCK ═══ -->
+<section>
+  <div class="card">
+    <h2>7. Silicone Sock <span class="badge">Inspect regularly</span></h2>
+    <p>The silicone sock insulates the heater block and prevents filament from sticking to it.</p>
+    <ul>
+      <li><strong>Check for:</strong> cracks, tears, or heavy buildup of burnt plastic.</li>
+      <li><strong>Replace</strong> if damaged — a torn sock causes temperature instability and stringing.</li>
+      <li>Soak a damaged sock in isopropyl alcohol to soften residue, then rinse and dry — but replacement is cheap and recommended.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ 8. FANS ═══ -->
+<section>
+  <div class="card">
+    <h2>8. Fans (Hotend, Front Cover &amp; Auxiliary) <span class="badge">Weekly check</span></h2>
+    <p>Dust buildup on fan blades reduces cooling efficiency and can cause noise or vibration.</p>
+    <ol>
+      <li><span class="step-num">1</span> Power off and unplug.</li>
+      <li><span class="step-num">2</span> Use compressed air, a soft brush, or a cotton swab to dislodge dust from blades.</li>
+      <li><span class="step-num">3</span> For stubborn grime, dampen a swab with <strong>isopropyl alcohol</strong> and wipe each blade.</li>
+      <li><span class="step-num">4</span> If dust is severe (<em>e.g.</em>, after many hours in a dusty room), remove the fan housing for a thorough clean.</li>
+    </ol>
+    <div class="alert alert-info">
+      💡 Check that all fans spin freely after cleaning. A stuck fan can cause heat-creep and clogs.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 9. SPRING STEEL BUILD PLATE ═══ -->
+<section>
+  <div class="card">
+    <h2>9. Spring Steel Sheet (Build Plate) <span class="badge">Every print</span></h2>
+    <p>Oils from your fingertips weaken bed adhesion. A clean sheet is the #1 fix for first-layer problems.</p>
+    <ol>
+      <li><span class="step-num">1</span> Remove the spring steel sheet from the magnetic bed.</li>
+      <li><span class="step-num">2</span> Wash with <strong>warm water + dish soap</strong>, then rinse thoroughly. <em>Or</em> wipe with isopropyl alcohol after every print.</li>
+      <li><span class="step-num">3</span> For stubborn residue (glue stick, PETG adhesion), wash with soap and water — alcohol alone won't dissolve water-soluble glue.</li>
+      <li><span class="step-num">4</span> Dry completely before re-seating on the bed.</li>
+    </ol>
+    <div class="alert alert-warn">
+      🖐️ Handle the sheet by the edges only. Avoid touching the textured surface.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REPLACEMENT PARTS ═══ -->
+<section>
+  <div class="card">
+    <h2>🛒 Replacement Parts &amp; Where to Buy</h2>
+    <p>Genuine Anycubic parts plus trusted aftermarket sources. Links verified June 2026.</p>
+
+    <h3>📍 Anycubic Official Store</h3>
+    <p>All Kobra S1 accessories: <a href="https://store.anycubic.com/collections/accessories-for-kobra-s1-combo" target="_blank">store.anycubic.com/collections/accessories-for-kobra-s1-combo</a></p>
+
+    <table class="parts-table">
+      <tr><th>Part</th><th>SKU</th><th>Price</th><th>Link</th></tr>
+      <tr><td>Filament Cutter Assembly</td><td>S010282</td><td>$9.90</td><td><a href="https://store.anycubic.com/products/cutter" target="_blank">store.anycubic.com/products/cutter</a></td></tr>
+      <tr><td>Hotend (0.4mm brass / hardened steel, 0.6mm, 0.8mm)</td><td>various</td><td>$15.99</td><td><a href="https://store.anycubic.com/products/hotend-for-fdm-3d-printers" target="_blank">store.anycubic.com/products/hotend</a></td></tr>
+      <tr><td>Spring Steel Magnetic Platform</td><td>S010418</td><td>$46.00</td><td><a href="https://store.anycubic.com/products/magnetic-platform" target="_blank">store.anycubic.com/products/magnetic-platform</a></td></tr>
+      <tr><td>Air Filter</td><td>S010271</td><td>$9.90</td><td><a href="https://store.anycubic.com/products/air-filter" target="_blank">store.anycubic.com/products/air-filter</a></td></tr>
+      <tr><td>Heatbed Nozzle Wiper</td><td>S010225</td><td>$9.99</td><td><a href="https://store.anycubic.com/products/heatbed-nozzle-wiper" target="_blank">store.anycubic.com/products/heatbed-nozzle-wiper</a></td></tr>
+      <tr><td>Filament Hub (ACE Pro)</td><td>S010247</td><td>$13.99</td><td><a href="https://store.anycubic.com/products/filament-hub" target="_blank">store.anycubic.com/products/filament-hub</a></td></tr>
+      <tr><td>AirPure 2.0 (HEPA filter)</td><td>AP20WH0A-M</td><td>$49.99</td><td><a href="https://store.anycubic.com/products/airpure-2-0" target="_blank">store.anycubic.com/products/airpure-2-0</a></td></tr>
+      <tr><td>Double-sided 3D Effect Plate</td><td>S010334</td><td>$34.99</td><td><a href="https://store.anycubic.com/products/3d-effect-plate" target="_blank">store.anycubic.com/products/3d-effect-plate</a></td></tr>
+      <tr><td>Cool Plate / Smooth Plate</td><td>—</td><td>$34.99</td><td><a href="https://store.anycubic.com/collections/accessories-for-kobra-s1-combo" target="_blank">Browse store</a></td></tr>
+    </table>
+
+    <h3>📍 Amazon (third-party &amp; bundles)</h3>
+    <table class="parts-table">
+      <tr><th>Part</th><th>Link</th></tr>
+      <tr><td>Silicone Sock (single, Kobra S1)</td><td><a href="https://www.amazon.com/dp/B0G33KLF4D" target="_blank">amazon.com/dp/B0G33KLF4D</a></td></tr>
+      <tr><td>Hotend Kit (hotend + 4 silicone socks + 5 nozzles)</td><td><a href="https://www.amazon.com/dp/B0F61P4TMJ" target="_blank">amazon.com/dp/B0F61P4TMJ</a></td></tr>
+      <tr><td>Filament Cutter (third-party)</td><td><a href="https://www.amazon.com/dp/B0GS1JXYGH" target="_blank">amazon.com/dp/B0GS1JXYGH</a></td></tr>
+      <tr><td>Search all Kobra S1 parts on Amazon</td><td><a href="https://www.amazon.com/kobra-s1-parts/s?k=kobra+s1+parts" target="_blank">amazon.com/kobra-s1-parts</a></td></tr>
+    </table>
+
+    <h3>📍 Micro-Swiss (aftermarket hotend)</h3>
+    <p>FlowTech™ all-metal hotend, heater core, silicone socks (3-pack): <a href="https://store.micro-swiss.com/collections/anycubic-kobra-s1" target="_blank">store.micro-swiss.com/collections/anycubic-kobra-s1</a></p>
+
+    <h3>📍 3DJake (Europe / UK)</h3>
+    <p>Spare parts for Kobra S1: <a href="https://www.3djake.com/spareparts/ersatzteile-fuer-anycubic-kobra-s1" target="_blank">3djake.com</a></p>
+
+    <h3>📘 Replacement guides (Anycubic Wiki)</h3>
+    <ul>
+      <li><a href="https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-combo/cutter-replacement" target="_blank">Cutter replacement guide</a></li>
+      <li><a href="https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-combo/hotend-replacement-guide" target="_blank">Hotend replacement guide</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ BONUS ═══ -->
+<section>
+  <div class="card">
+    <h2>🔧 Bonus — General Good Practices</h2>
+    <ul>
+      <li><strong>Keep the enclosure clean.</strong> Wipe down interior walls and the glass door monthly — airborne particles land on prints.</li>
+      <li><strong>Check belts (if accessible).</strong> Pluck the X/Y belts — they should sound like a low guitar note. Too loose → ghosting; too tight → bearing wear.</li>
+      <li><strong>Check the PTFE tube.</strong> If the Bowden tube (if used) shows scorch marks at the hotend end, trim 5–10 mm or replace it.</li>
+      <li><strong>Store filament properly.</strong> Dry filament = fewer clogs and better surface finish. Use a dry box for hygroscopic materials (PETG, TPU, Nylon).</li>
+      <li><strong>Run a PID tune</strong> if you see temperature fluctuations during prints (firmware menu or via G-code).</li>
+      <li><strong>Log your maintenance.</strong> Jot down what you did and when — it helps diagnose issues later.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ CHECKLIST ═══ -->
+<section>
+  <div class="card">
+    <h2>📋 Quick-Check Walkaround (Pre-Print)</h2>
+    <ul class="checklist">
+      <li class="done">Spring steel sheet is clean and seated flat.</li>
+      <li>No debris on the PEI/textured surface.</li>
+      <li>Filament spool turns freely; no tangles.</li>
+      <li>Nozzle tip is clean (wipe with a brass brush or tissue while hot if needed).</li>
+      <li>Z-screw and Y-rods are clean and lightly lubricated.</li>
+      <li>Fans spin up correctly on startup.</li>
+      <li>Silicone sock is seated and intact.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>Compiled from the <a href="https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-combo/maintenance-recommendations" target="_blank">Anycubic Kobra S1 Maintenance Wiki</a> + general FDM best practices.</p>
+  <p>Last updated June 2026. Always consult the official wiki for model-specific updates.</p>
+</footer>
+
+</div>
+</body>
+</html>
