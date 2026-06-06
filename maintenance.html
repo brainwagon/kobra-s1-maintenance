@@ -72,8 +72,11 @@
     color: #1a1f2b;
   }
   .card h3:first-of-type { margin-top: 0; }
-  .card ul, .card ol { padding-left: 1.4rem; margin: .4rem 0 .6rem; }
-  .card li { margin-bottom: .3rem; }
+.card ul, .card ol { padding-left: 1.4rem; margin: .4rem 0 .6rem; }
+  .card ol li { margin-bottom: .4rem; }
+  .card ol li::marker { content: ""; }
+  .card ul li { margin-bottom: .3rem; }
+  .card ul li { margin-bottom: .3rem; }
   .card p { margin: .35rem 0; }
 
   .alert {
@@ -90,13 +93,20 @@
   .schedule {
     width: 100%;
     border-collapse: collapse;
-    font-size: .92rem;
-    margin: .75rem 0;
+.step-num {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+    font-size: .8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: .4rem;
+    vertical-align: middle;
   }
-  .schedule th, .schedule td {
-    text-align: left;
-    padding: .45rem .6rem;
-    border-bottom: 1px solid var(--border);
   }
   .schedule th { background: var(--accent); color: #fff; font-weight: 600; }
   .schedule tr:nth-child(even) td { background: #f2f5fa; }
