@@ -169,23 +169,7 @@
   <p>Keep your printer running smooth · Step-by-step · Checklists · Parts &amp; spares</p>
 </header>
 
-<!-- ═══ SCHEDULE ═══ -->
-<section>
-  <div class="card">
-    <h2>📅 Quick-Reference Schedule</h2>
-    <table class="schedule">
-      <tr><th>Interval</th><th>Task</th><th>See §</th></tr>
-      <tr><td><strong>Every print</strong></td><td>Wipe spring steel sheet; check first layer</td><td>9</td></tr>
-      <tr><td><strong>Weekly</strong></td><td>Inspect fans for dust; check camera lens</td><td>8, 4</td></tr>
-      <tr><td><strong>Monthly</strong></td><td>Clean &amp; inspect Y-axis linear rods</td><td>2</td></tr>
-      <tr><td><strong>Every 3 months</strong></td><td>Lubricate Z-axis lead screw</td><td>1</td></tr>
-      <tr><td><strong>Every 3–5 spools</strong></td><td>Inspect cutter assembly for wear</td><td>5</td></tr>
-      <tr><td><strong>As needed</strong></td><td>Nozzle cleaning / cold pull; replace silicone sock</td><td>6, 7</td></tr>
-      <tr><td><strong>As needed</strong></td><td>Adjust belt tension (XY &amp; Z axis)</td><td>10</td></tr>
-    </table>
-    <p class="alert alert-info">🔗 Original source: <a href="https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-combo/maintenance-recommendations" target="_blank">Anycubic Wiki — Kobra S1 Maintenance Recommendations</a></p>
-  </div>
-</section>
+<h2 style="font-size:1.5rem; color:var(--accent); margin: 2rem 0 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">1. General Reference &amp; Safety</h2>
 
 <!-- ═══ SAFETY ═══ -->
 <section>
@@ -200,24 +184,46 @@
   </div>
 </section>
 
-<!-- ═══ VIDEO ═══ -->
+<!-- ═══ SCHEDULE ═══ -->
 <section>
-  <div class="card" style="text-align:center;">
-    <h2>▶️ Extruder Disassembly Video</h2>
-    <p>Step-by-step walkthrough for taking apart the Kobra S1 extruder — useful when clearing jams or replacing parts.</p>
-    <div style="margin-top:.75rem;">
-      <a href="https://www.youtube.com/watch?v=EUBRvJcQh-I" target="_blank" rel="noopener" style="display:inline-block;max-width:100%;border-radius:.5rem;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.12);">
-        <img src="https://i.ytimg.com/vi/EUBRvJcQh-I/hqdefault.jpg" alt="Anycubic Kobra S1 How To Disassemble Extruder" style="display:block;width:100%;max-width:480px;height:auto;">
-      </a>
-      <p style="margin-top:.5rem;font-size:.9rem;"><a href="https://www.youtube.com/watch?v=EUBRvJcQh-I" target="_blank" rel="noopener">Watch on YouTube →</a></p>
-    </div>
+  <div class="card">
+    <h2>📅 Quick-Reference Schedule</h2>
+    <table class="schedule">
+      <tr><th>Interval</th><th>Task</th><th>See §</th></tr>
+      <tr><td><strong>Every print</strong></td><td>Wipe spring steel sheet; check first layer</td><td>Bed</td></tr>
+      <tr><td><strong>Weekly</strong></td><td>Inspect fans for dust; check camera lens</td><td>Fans, Camera</td></tr>
+      <tr><td><strong>Monthly</strong></td><td>Clean &amp; inspect Y-axis linear rods</td><td>Y-Axis</td></tr>
+      <tr><td><strong>Every 3 months</strong></td><td>Lubricate Z-axis lead screw</td><td>Z-Axis</td></tr>
+      <tr><td><strong>Every 3–5 spools</strong></td><td>Inspect cutter assembly for wear</td><td>Cutter</td></tr>
+      <tr><td><strong>As needed</strong></td><td>Nozzle cleaning / cold pull; replace silicone sock</td><td>Hotend, Sock</td></tr>
+      <tr><td><strong>As needed</strong></td><td>Adjust belt tension (XY &amp; Z axis)</td><td>Belts</td></tr>
+    </table>
+    <p class="alert alert-info">🔗 Original source: <a href="https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-combo/maintenance-recommendations" target="_blank">Anycubic Wiki — Kobra S1 Maintenance Recommendations</a></p>
   </div>
 </section>
+
+<!-- ═══ CHECKLIST ═══ -->
+<section>
+  <div class="card">
+    <h2>📋 Quick-Check Walkaround (Pre-Print)</h2>
+    <ul class="checklist">
+      <li class="done">Spring steel sheet is clean and seated flat.</li>
+      <li>No debris on the PEI/textured surface.</li>
+      <li>Filament spool turns freely; no tangles.</li>
+      <li>Nozzle tip is clean (wipe with a brass brush or tissue while hot if needed).</li>
+      <li>Z-screw and Y-rods are clean and lightly lubricated.</li>
+      <li>Fans spin up correctly on startup.</li>
+      <li>Silicone sock is seated and intact.</li>
+    </ul>
+  </div>
+</section>
+
+<h2 style="font-size:1.5rem; color:var(--accent); margin: 2rem 0 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">2. Motion System</h2>
 
 <!-- ═══ 1. Z-AXIS LEAD SCREW ═══ -->
 <section>
   <div class="card">
-    <h2>1. Z-Axis Lead Screw <span class="badge">Every 3 months</span></h2>
+    <h2>Z-Axis Lead Screw <span class="badge">Every 3 months</span></h2>
 
     <p><strong>Symptoms it needs attention:</strong> Grinding, clicking, or uneven noise when the Z-axis moves. (Tip: printing above 350 mm/s produces normal metal friction sounds — don't confuse the two.)</p>
 
@@ -239,7 +245,7 @@
 <!-- ═══ 2. Y-AXIS LINEAR RODS ═══ -->
 <section>
   <div class="card">
-    <h2>2. Y-Axis Linear Rods <span class="badge">Monthly</span></h2>
+    <h2>Y-Axis Linear Rods <span class="badge">Monthly</span></h2>
     <p>The Y-axis glides on steel linear rods through linear bearings. Dust or filament fragments can cause binding and layer inconsistencies.</p>
 
     <h3>🛠 Step-by-Step</h3>
@@ -256,7 +262,7 @@
 <!-- ═══ 3. X-AXIS RODS ═══ -->
 <section>
   <div class="card">
-    <h2>3. X-Axis Rods <span class="badge">As needed</span></h2>
+    <h2>X-Axis Rods <span class="badge">As needed</span></h2>
     <p>The X-axis uses <strong>graphene-bearing sleeves</strong> — they are self-lubricating.</p>
 
     <div class="alert alert-danger"><strong>🚫 NEVER apply grease to the X-axis rods.</strong> Graphene sleeves already provide lubrication; adding grease attracts dust and causes premature wear.</div>
@@ -271,119 +277,26 @@
   </div>
 </section>
 
-<!-- ═══ 4. CAMERA ═══ -->
-<section>
-  <div class="card">
-    <h2>4. Camera <span class="badge">As needed / weekly check</span></h2>
-    <p>Blurry or hazy time-lapse / monitoring footage usually means a dirty lens.</p>
-    <ol>
-      <li><span class="step-num">1</span> Use a <strong>lint-free microfiber cloth</strong> or a cotton swab.</li>
-      <li><span class="step-num">2</span> Lightly moisten with isopropyl alcohol.</li>
-      <li><span class="step-num">3</span> Gently wipe the lens in a circular motion. Avoid pressing hard.</li>
-    </ol>
-  </div>
-</section>
-
-<!-- ═══ 5. CUTTER ASSEMBLY ═══ -->
-<section>
-  <div class="card">
-    <h2>5. Cutter (Filament Cutter) <span class="badge">Every 3–5 spools</span></h2>
-    <p>The ACE Pro / filament cutter can dull over time, leading to ragged cuts or failed retractions.</p>
-    <ol>
-      <li><span class="step-num">1</span> Power off.</li>
-      <li><span class="step-num">2</span> Use an <strong>S2.0 hex (Allen) key</strong> to remove the cutter assembly.</li>
-      <li><span class="step-num">3</span> Inspect the blade edge. If it's chipped, rounded, or visibly worn, replace it.</li>
-      <li><span class="step-num">4</span> Reassemble and test with a filament load/unload cycle.</li>
-    </ol>
-  </div>
-</section>
-
-<!-- ═══ 6. HOTEND & NOZZLE ═══ -->
-<section>
-  <div class="card">
-    <h2>6. Hotend &amp; Nozzle <span class="badge">As needed</span></h2>
-    <p><strong>Signs of trouble:</strong> under-extrusion, stringing, blobs, clicking extruder, or poor surface finish.</p>
-
-    <h3>🛠 Basic Cleaning (surface gunk)</h3>
-    <ol>
-      <li><span class="step-num">1</span> Remove the silicone sock (carefully — it's brittle when cold).</li>
-      <li><span class="step-num">2</span> Heat nozzle to <strong>200 °C</strong>.</li>
-      <li><span class="step-num">3</span> Wearing insulated gloves, use a paper towel or tweezers to wipe the outside of the nozzle clean.</li>
-    </ol>
-
-    <h3>🛠 Deep Clean — Cold Pull (recommended for clogs)</h3>
-    <ol>
-      <li><span class="step-num">1</span> Heat hotend to printing temperature for your current filament. Purge a small amount.</li>
-      <li><span class="step-num">2</span> Let it cool to <strong>~90–100 °C</strong> (just above the glass-transition temp of PLA).</li>
-      <li><span class="step-num">3</span> Manually push filament through until it exits the nozzle, then firmly <strong>pull it out</strong> — the tip should come out as a clean plug with debris inside.</li>
-      <li><span class="step-num">4</span> Repeat until the plug comes out clean. Use <strong>nylon cleaning filament</strong> for stubborn clogs (follow the same method).</li>
-    </ol>
-
-    <h3>🛠 Clogged Nozzle — Needle Clear</h3>
-    <ol>
-      <li><span class="step-num">1</span> Heat nozzle to <strong>230 °C</strong>.</li>
-      <li><span class="step-num">2</span> Carefully insert the provided steel needle (or 0.35 mm nozzle-clearing pin) up into the nozzle orifice.</li>
-      <li><span class="step-num">3</span> Purge filament to push out the dislodged debris.</li>
-    </ol>
-
-    <div class="alert alert-warn">
-      ⏱ Let the hotend cool down before putting the silicone sock back on.
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 7. SILICONE SOCK ═══ -->
-<section>
-  <div class="card">
-    <h2>7. Silicone Sock <span class="badge">Inspect regularly</span></h2>
-    <p>The silicone sock insulates the heater block and prevents filament from sticking to it.</p>
-    <ul>
-      <li><strong>Check for:</strong> cracks, tears, or heavy buildup of burnt plastic.</li>
-      <li><strong>Replace</strong> if damaged — a torn sock causes temperature instability and stringing.</li>
-      <li>Soak a damaged sock in isopropyl alcohol to soften residue, then rinse and dry — but replacement is cheap and recommended.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ═══ 8. FANS ═══ -->
-<section>
-  <div class="card">
-    <h2>8. Fans (Hotend, Front Cover &amp; Auxiliary) <span class="badge">Weekly check</span></h2>
-    <p>Dust buildup on fan blades reduces cooling efficiency and can cause noise or vibration.</p>
-    <ol>
-      <li><span class="step-num">1</span> Power off and unplug.</li>
-      <li><span class="step-num">2</span> Use compressed air, a soft brush, or a cotton swab to dislodge dust from blades.</li>
-      <li><span class="step-num">3</span> For stubborn grime, dampen a swab with <strong>isopropyl alcohol</strong> and wipe each blade.</li>
-      <li><span class="step-num">4</span> If dust is severe (<em>e.g.</em>, after many hours in a dusty room), remove the fan housing for a thorough clean.</li>
-    </ol>
-    <div class="alert alert-info">
-      💡 Check that all fans spin freely after cleaning. A stuck fan can cause heat-creep and clogs.
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 9. SPRING STEEL BUILD PLATE ═══ -->
-<section>
-  <div class="card">
-    <h2>9. Spring Steel Sheet (Build Plate) <span class="badge">Every print</span></h2>
-    <p>Oils from your fingertips weaken bed adhesion. A clean sheet is the #1 fix for first-layer problems.</p>
-    <ol>
-      <li><span class="step-num">1</span> Remove the spring steel sheet from the magnetic bed.</li>
-      <li><span class="step-num">2</span> Wash with <strong>warm water + dish soap</strong>, then rinse thoroughly. <em>Or</em> wipe with isopropyl alcohol after every print.</li>
-      <li><span class="step-num">3</span> For stubborn residue (glue stick, PETG adhesion), wash with soap and water — alcohol alone won't dissolve water-soluble glue.</li>
-      <li><span class="step-num">4</span> Dry completely before re-seating on the bed.</li>
-    </ol>
-    <div class="alert alert-warn">
-      🖐️ Handle the sheet by the edges only. Avoid touching the textured surface.
-    </div>
-  </div>
-</section>
-
 <!-- ═══ 10. BELTS ADJUSTMENT ═══ -->
 <section>
   <div class="card">
-    <h2>10. Belts Adjustment <span class="badge">As needed</span></h2>
+    <h2>Belts Adjustment <span class="badge">As needed</span></h2>
     <p>Proper belt tension is critical. Loose belts can cause various printing issues, such as layer lines. You will need H2.0 and H2.5 Allen keys.</p>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0;">
+      <div style="flex: 1; min-width: 260px;">
+        <h4 style="margin-bottom: .5rem; font-size: .95rem;">▶️ XY-Axis Belt Adjustment</h4>
+        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:.5rem; box-shadow:0 2px 8px rgba(0,0,0,.12);">
+          <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/0bv9cN6vwyE" title="XY-Axis Belt Adjustment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div style="flex: 1; min-width: 260px;">
+        <h4 style="margin-bottom: .5rem; font-size: .95rem;">▶️ Z-Axis Belt Adjustment</h4>
+        <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:.5rem; box-shadow:0 2px 8px rgba(0,0,0,.12);">
+          <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/qUS9Emd9c2M" title="Z-Axis Belt Adjustment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
 
     <h3>🛠 XY-axis Belts</h3>
     <ol>
@@ -405,6 +318,148 @@
       <li><span class="step-num">1</span> Turn on the printer and tap <strong>“Calibration”</strong> on the display.</li>
       <li><span class="step-num">2</span> Perform the input shaping and auto-leveling function (takes about 15–20 minutes).</li>
     </ol>
+  </div>
+</section>
+
+<h2 style="font-size:1.5rem; color:var(--accent); margin: 2rem 0 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">3. Extrusion System</h2>
+
+<!-- ═══ VIDEO ═══ -->
+<section>
+  <div class="card" style="text-align:center;">
+    <h2>▶️ Extruder Disassembly Video</h2>
+    <p>Step-by-step walkthrough for taking apart the Kobra S1 extruder — useful when clearing jams or replacing parts.</p>
+    <div style="margin-top:.75rem; max-width:480px; margin-left:auto; margin-right:auto;">
+      <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:.5rem; box-shadow:0 2px 8px rgba(0,0,0,.12);">
+        <iframe style="position:absolute; top:0; left:0; width:100%; height:100%;" src="https://www.youtube.com/embed/EUBRvJcQh-I" title="Extruder Disassembly Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 6. HOTEND & NOZZLE ═══ -->
+<section>
+  <div class="card">
+    <h2>Hotend &amp; Nozzle <span class="badge">As needed</span></h2>
+    <p><strong>Signs of trouble:</strong> under-extrusion, stringing, blobs, clicking extruder, or poor surface finish.</p>
+
+    <h3>🛠 Basic Cleaning (surface gunk)</h3>
+    <ol>
+      <li><span class="step-num">1</span> Remove the silicone sock (carefully — it's brittle when cold).</li>
+      <li><span class="step-num">2</span> Heat nozzle to <strong>200 °C</strong>.</li>
+      <li><span class="step-num">3</span> Wearing insulated gloves, use a paper towel or tweezers to wipe the outside of the nozzle clean.</li>
+    </ol>
+
+    <h3>🛠 Deep Clean — Cold Pull (recommended for clogs)</h3>
+    <ol>
+      <li><span class="step-num">1</span> Heat hotend to printing temperature for your current filament. Purge a small amount.</li>
+      <li><span class="step-num">2</span> Let it cool to <strong>~90–100 °C</strong> (just above the glass-transition temp of PLA).</li>
+      <li><span class="step-num">3</span> Manually push filament through until it exits the nozzle, then firmly <strong>pull it out</strong> — the tip should come out as a clean plug with debris inside.</li>
+      <li><span class="step-num">4</span> Repeat until the plug clean. Use <strong>nylon cleaning filament</strong> for stubborn clogs (follow the same method).</li>
+    </ol>
+
+    <h3>🛠 Clogged Nozzle — Needle Clear</h3>
+    <ol>
+      <li><span class="step-num">1</span> Heat nozzle to <strong>230 °C</strong>.</li>
+      <li><span class="step-num">2</span> Carefully insert the provided steel needle (or 0.35 mm nozzle-clearing pin) up into the nozzle orifice.</li>
+      <li><span class="step-num">3</span> Purge filament to push out the dislodged debris.</li>
+    </ol>
+
+    <div class="alert alert-warn">
+      ⏱ Let the hotend cool down before putting the silicone sock back on.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 7. SILICONE SOCK ═══ -->
+<section>
+  <div class="card">
+    <h2>Silicone Sock <span class="badge">Inspect regularly</span></h2>
+    <p>The silicone sock insulates the heater block and prevents filament from sticking to it.</p>
+    <ul>
+      <li><strong>Check for:</strong> cracks, tears, or heavy buildup of burnt plastic.</li>
+      <li><strong>Replace</strong> if damaged — a torn sock causes temperature instability and stringing.</li>
+      <li>Soak a damaged sock in isopropyl alcohol to soften residue, then rinse and dry — but replacement is cheap and recommended.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═══ 5. CUTTER ASSEMBLY ═══ -->
+<section>
+  <div class="card">
+    <h2>Cutter (Filament Cutter) <span class="badge">Every 3–5 spools</span></h2>
+    <p>The ACE Pro / filament cutter can dull over time, leading to ragged cuts or failed retractions.</p>
+    <ol>
+      <li><span class="step-num">1</span> Power off.</li>
+      <li><span class="step-num">2</span> Use an <strong>S2.0 hex (Allen) key</strong> to remove the cutter assembly.</li>
+      <li><span class="step-num">3</span> Inspect the blade edge. If it's chipped, rounded, or visibly worn, replace it.</li>
+      <li><span class="step-num">4</span> Reassemble and test with a filament load/unload cycle.</li>
+    </ol>
+  </div>
+</section>
+
+<h2 style="font-size:1.5rem; color:var(--accent); margin: 2rem 0 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">4. Bed &amp; Cooling</h2>
+
+<!-- ═══ 9. SPRING STEEL BUILD PLATE ═══ -->
+<section>
+  <div class="card">
+    <h2>Spring Steel Sheet (Build Plate) <span class="badge">Every print</span></h2>
+    <p>Oils from your fingertips weaken bed adhesion. A clean sheet is the #1 fix for first-layer problems.</p>
+    <ol>
+      <li><span class="step-num">1</span> Remove the spring steel sheet from the magnetic bed.</li>
+      <li><span class="step-num">2</span> Wash with <strong>warm water + dish soap</strong>, then rinse thoroughly. <em>Or</em> wipe with isopropyl alcohol after every print.</li>
+      <li><span class="step-num">3</span> For stubborn residue (glue stick, PETG adhesion), wash with soap and water — alcohol alone won't dissolve water-soluble glue.</li>
+      <li><span class="step-num">4</span> Dry completely before re-seating on the bed.</li>
+    </ol>
+    <div class="alert alert-warn">
+      🖐️ Handle the sheet by the edges only. Avoid touching the textured surface.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 8. FANS ═══ -->
+<section>
+  <div class="card">
+    <h2>Fans (Hotend, Front Cover &amp; Auxiliary) <span class="badge">Weekly check</span></h2>
+    <p>Dust buildup on fan blades reduces cooling efficiency and can cause noise or vibration.</p>
+    <ol>
+      <li><span class="step-num">1</span> Power off and unplug.</li>
+      <li><span class="step-num">2</span> Use compressed air, a soft brush, or a cotton swab to dislodge dust from blades.</li>
+      <li><span class="step-num">3</span> For stubborn grime, dampen a swab with <strong>isopropyl alcohol</strong> and wipe each blade.</li>
+      <li><span class="step-num">4</span> If dust is severe (<em>e.g.</em>, after many hours in a dusty room), remove the fan housing for a thorough clean.</li>
+    </ol>
+    <div class="alert alert-info">
+      💡 Check that all fans spin freely after cleaning. A stuck fan can cause heat-creep and clogs.
+    </div>
+  </div>
+</section>
+
+<h2 style="font-size:1.5rem; color:var(--accent); margin: 2rem 0 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem;">5. Peripherals &amp; Extras</h2>
+
+<!-- ═══ 4. CAMERA ═══ -->
+<section>
+  <div class="card">
+    <h2>Camera <span class="badge">As needed / weekly check</span></h2>
+    <p>Blurry or hazy time-lapse / monitoring footage usually means a dirty lens.</p>
+    <ol>
+      <li><span class="step-num">1</span> Use a <strong>lint-free microfiber cloth</strong> or a cotton swab.</li>
+      <li><span class="step-num">2</span> Lightly moisten with isopropyl alcohol.</li>
+      <li><span class="step-num">3</span> Gently wipe the lens in a circular motion. Avoid pressing hard.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ BONUS ═══ -->
+<section>
+  <div class="card">
+    <h2>🔧 Bonus — General Good Practices</h2>
+    <ul>
+      <li><strong>Keep the enclosure clean.</strong> Wipe down interior walls and the glass door monthly — airborne particles land on prints.</li>
+      <li><strong>Check belts (if accessible).</strong> Pluck the X/Y belts — they should sound like a low guitar note. Too loose → ghosting; too tight → bearing wear.</li>
+      <li><strong>Check the PTFE tube.</strong> If the Bowden tube (if used) shows scorch marks at the hotend end, trim 5–10 mm or replace it.</li>
+      <li><strong>Store filament properly.</strong> Dry filament = fewer clogs and better surface finish. Use a dry box for hygroscopic materials (PETG, TPU, Nylon).</li>
+      <li><strong>Run a PID tune</strong> if you see temperature fluctuations during prints (firmware menu or via G-code).</li>
+      <li><strong>Log your maintenance.</strong> Jot down what you did and when — it helps diagnose issues later.</li>
+    </ul>
   </div>
 </section>
 
@@ -449,37 +504,6 @@
     <ul>
       <li><a href="https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-combo/cutter-replacement" target="_blank">Cutter replacement guide</a></li>
       <li><a href="https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-combo/hotend-replacement-guide" target="_blank">Hotend replacement guide</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ═══ BONUS ═══ -->
-<section>
-  <div class="card">
-    <h2>🔧 Bonus — General Good Practices</h2>
-    <ul>
-      <li><strong>Keep the enclosure clean.</strong> Wipe down interior walls and the glass door monthly — airborne particles land on prints.</li>
-      <li><strong>Check belts (if accessible).</strong> Pluck the X/Y belts — they should sound like a low guitar note. Too loose → ghosting; too tight → bearing wear.</li>
-      <li><strong>Check the PTFE tube.</strong> If the Bowden tube (if used) shows scorch marks at the hotend end, trim 5–10 mm or replace it.</li>
-      <li><strong>Store filament properly.</strong> Dry filament = fewer clogs and better surface finish. Use a dry box for hygroscopic materials (PETG, TPU, Nylon).</li>
-      <li><strong>Run a PID tune</strong> if you see temperature fluctuations during prints (firmware menu or via G-code).</li>
-      <li><strong>Log your maintenance.</strong> Jot down what you did and when — it helps diagnose issues later.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ═══ CHECKLIST ═══ -->
-<section>
-  <div class="card">
-    <h2>📋 Quick-Check Walkaround (Pre-Print)</h2>
-    <ul class="checklist">
-      <li class="done">Spring steel sheet is clean and seated flat.</li>
-      <li>No debris on the PEI/textured surface.</li>
-      <li>Filament spool turns freely; no tangles.</li>
-      <li>Nozzle tip is clean (wipe with a brass brush or tissue while hot if needed).</li>
-      <li>Z-screw and Y-rods are clean and lightly lubricated.</li>
-      <li>Fans spin up correctly on startup.</li>
-      <li>Silicone sock is seated and intact.</li>
     </ul>
   </div>
 </section>
